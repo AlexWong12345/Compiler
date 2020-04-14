@@ -4,4 +4,14 @@
  * Each line is a token to be used by the parser
  */
 
-int main(
+#include <stdio.h>
+#include <stdlib.h>
+#include "lexer.h"
+
+int main(int argc, char **argv) {
+
+	
+
+
+	return 0;
+}

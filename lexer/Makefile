@@ -1,6 +1,6 @@
 FLAGS = -Wall -g -std=gnu99
 
-all : lexer
+all : lexer tests
 
 lexer: lexer.o
 	gcc ${FLAGS} -o $@ $^
