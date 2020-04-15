@@ -16,3 +16,4 @@ tests:
 clean:
 	-rm *.o lexer
 	-rm test1
+	-rm tokens
