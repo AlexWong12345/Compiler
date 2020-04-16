@@ -138,8 +138,8 @@ void write_token(FILE *dest, int state) {
 			len = 11;
 			break;
 		case IDENTIFIER2 :
-			strncpy(token, "IDENTIFIER2 ", 12);
-			len = 12;
+			strncpy(token, "IDENTIFIER ", 11);
+			len = 11;
 			break;
 		case WHITE_SPACE :
 			strncpy(token, "WHITE_SPACE ", 12);
