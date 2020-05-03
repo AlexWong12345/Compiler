@@ -1,19 +1,13 @@
-FLAGS = -Wall -g -std=gnu99
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+LDFLAGS = 
+OBJFILES = productions.o parser.o
+TARGET = parser
 
-all : lexer
+all: $(TARGET)
 
-lexer: lexer.o
-	gcc ${FLAGS} -o $@ $^
-
-lexer.o: lexer.h
-
-%.o : %.c
-	gcc ${FLAGS} -c $<
-
-tests:
-	gcc ${FLAGS} -o test1 test1.c
+$(TARGET): $(OBJFILES)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
 
 clean:
-	-rm *.o lexer
-	-rm test1
-	-rm tokens
+	rm -f $(OBJFILES) $(TARGET) *~
