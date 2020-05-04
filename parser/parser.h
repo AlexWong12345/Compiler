@@ -7,4 +7,9 @@ struct ast_node {
 	struct ast_node *children[]; /* The Children branching off of this node */
 };
 
-
+/* Adds a node to the ast_node node 
+ */
+void add_node(struct ast_node *node) {
+	node->num_children++;
+	
+}

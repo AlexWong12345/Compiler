@@ -10,6 +10,7 @@ FILE *tokens;
 char *line;
 char **lineptr = &line;
 size_t line_size;
+struct ast_node *head;
 
 int main(int argc, char **argv) {
 	(void) argc;
@@ -19,7 +20,12 @@ int main(int argc, char **argv) {
 		exit(1);
 	}
 
+	head = malloc(sizeof(struct ast_node) + sizeof(struct ast_node*));
+	head->num_children = 0;
+	head->item = 0;
+	head->children[0] = head;
 	int check = program();
+
 
 	if (check == 1) {
 		printf("No parsing error!\n");

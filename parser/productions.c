@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "productions.h"
+#include "parser.h"
 
 
 /* A program is a list of functions
@@ -27,13 +28,15 @@ int program() {
 	int read_size;
 	while (ret && !end) {
 		ret = function();
-		read_size = readline(lineptr, &line_size; tokens);
+		read_size = getline(lineptr, &line_size, tokens);
 		if (read_size == -1) { // EOF
 			end++;
 		} else { // Unread the line
 			fseek(tokens, -1*read_size, SEEK_CUR);
 		}
 	}
+
+	(void) head;
 	return ret;
 }
 
@@ -42,6 +45,6 @@ int program() {
  */
 
 int function() {
-	
+	return 0;
 
 }
